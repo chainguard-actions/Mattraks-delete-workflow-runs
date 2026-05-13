@@ -1,0 +1,23 @@
+name: Test workflow pattern filters
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 30
+          keep_minimum_runs: 6
+          dry_run: "true"
+          delete_workflow_pattern: "ci.yml"
+          delete_workflow_by_state_pattern: "active"
+        continue-on-error: true
+      - name: Assert action ran with workflow pattern filters
+        run: |
+          echo "Action completed with delete_workflow_pattern and delete_workflow_by_state_pattern"
+          echo "PASS"

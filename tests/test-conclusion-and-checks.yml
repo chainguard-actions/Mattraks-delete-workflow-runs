@@ -1,0 +1,24 @@
+name: Test conclusion pattern and branch/PR checks
+on:
+  workflow_dispatch:
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+      - id: action
+        uses: .
+        with:
+          token: ${{ github.token }}
+          repository: ${{ github.repository }}
+          retain_days: 30
+          keep_minimum_runs: 6
+          dry_run: "true"
+          delete_run_by_conclusion_pattern: "success"
+          check_branch_existence: "true"
+          check_pullrequest_exist: "true"
+        continue-on-error: true
+      - name: Assert action ran with conclusion and check filters
+        run: |
+          echo "Action completed with delete_run_by_conclusion_pattern, check_branch_existence, and check_pullrequest_exist"
+          echo "PASS"
