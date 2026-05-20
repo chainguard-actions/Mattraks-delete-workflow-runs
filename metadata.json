@@ -1,7 +1,0 @@
-{
-  "owner": "Mattraks",
-  "name": "delete-workflow-runs",
-  "visibility": "internal",
-  "description": "An action to delete workflow runs in a repository.",
-  "block_publish": false
-}
