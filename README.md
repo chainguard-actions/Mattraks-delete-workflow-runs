@@ -8,8 +8,8 @@ Hardened by [Chainguard](https://www.chainguard.dev) from the upstream action at
 
 | Version | Tag | Upstream commit |
 |---------|-----|-----------------|
-| v2.0.5 | [`v2.0.5`](https://github.com/chainguard-actions/Mattraks--delete-workflow-runs/tree/v2.0.5) | — |
-| v2.0.6 | [`v2.0.6`](https://github.com/chainguard-actions/Mattraks--delete-workflow-runs/tree/v2.0.6) | — |
+| v2.0.5 | [`v2.0.5`](https://github.com/chainguard-actions/Mattraks-delete-workflow-runs/tree/v2.0.5) | — |
+| v2.0.6 | [`v2.0.6`](https://github.com/chainguard-actions/Mattraks-delete-workflow-runs/tree/v2.0.6) | — |
 
 ## Privacy
 
