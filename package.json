@@ -1,0 +1,51 @@
+{
+  "name": "delete-workflow-runs",
+  "version": "2.1.0",
+  "description": "GitHub Action to delete workflow runs in a repository.",
+  "main": "dist/index.js",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prebuild": "npm run lint",
+    "build": "ncc build index.js -o dist --minify",
+    "test": "jest",
+    "lint": "eslint . --ext .js --no-config-lookup",
+    "format": "prettier --print-width 200 --write ./index.js",
+    "ci": "npm ci --prefer-offline --no-audit --progress=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mattraks/delete-workflow-runs.git"
+  },
+  "keywords": [
+    "github",
+    "actions",
+    "workflow",
+    "delete"
+  ],
+  "author": "Mattraks",
+  "license": "MIT",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "dependencies": {
+    "@actions/core": "^3.0.1",
+    "@octokit/plugin-retry": "^8.1.0",
+    "@octokit/plugin-throttling": "^11.0.3",
+    "@octokit/rest": "^22.0.1",
+    "glob": "^13.0.6",
+    "inflight": "^1.0.6"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.38.4",
+    "eslint": "^10.4.1",
+    "eslint-config-prettier": "^10.1.8",
+    "jest": "^30.4.2",
+    "prettier": "^3.8.3"
+  },
+  "allowScripts": {
+    "unrs-resolver@1.12.2": true
+  }
+}
