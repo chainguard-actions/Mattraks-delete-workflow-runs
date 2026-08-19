@@ -1,4 +1,4 @@
-name: Test check_branch_existence input
+name: Test workflow state filter with dry-run
 on:
   workflow_dispatch:
 jobs:
@@ -13,18 +13,18 @@ jobs:
         with:
           token: ${{ github.token }}
           repository: ${{ github.repository }}
-          retain_days: 0
-          keep_minimum_runs: 0
+          retain_days: 30
+          keep_minimum_runs: 6
+          delete_workflow_by_state_pattern: "active"
           dry_run: true
-          check_branch_existence: true
 
-      - name: Assert action ran (succeeded or failed gracefully on sentinel repo)
+      - name: Assert action ran with state filter
         env:
           OUTCOME: ${{ steps.action.outcome }}
         run: |
           echo "outcome: $OUTCOME"
           if [ "$OUTCOME" = "success" ]; then
-            echo "PASS: action succeeded with check_branch_existence=true"
+            echo "PASS: action completed successfully with state filter in dry-run mode"
           elif [ "$OUTCOME" = "failure" ]; then
             echo "PASS: action failed gracefully (sentinel repo is not resolvable)"
           else

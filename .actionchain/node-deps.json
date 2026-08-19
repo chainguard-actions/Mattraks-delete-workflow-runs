@@ -1,0 +1,9 @@
+{
+  "status": "bundled",
+  "entries": [
+    {
+      "path": "dist/index.js",
+      "status": "bundled"
+    }
+  ]
+}
