@@ -4,8 +4,13 @@
   "version": "v2",
   "commit_sha": "0cf693bc9909e5e867ee8f27b813224ba862939c",
   "url": "https://github.com/Mattraks/delete-workflow-runs",
-  "policy_sha": "d636be7e43ef829af6e853da6b3c7566db9f72fe",
+  "policy_sha": "374911c4be584df24e6da57af2d990570ef0f859",
   "test_policy_sha": "843adf9e4b8f85d0c08b27b9d0b09dd094b54702",
   "test_agent_version": "2",
-  "harden_agent_version": "2"
+  "harden_agent_version": "2",
+  "dist_artifact": {
+    "gcs_uri": "gs://patch-actions-node-artifacts/dist-artifacts/Mattraks/delete-workflow-runs/v2/sha256-35780beb7d02ac7b0c28bfbf9860cb152bf44a20075bbe2c44ad3996d5d49450.tar.gz",
+    "sha256": "35780beb7d02ac7b0c28bfbf9860cb152bf44a20075bbe2c44ad3996d5d49450",
+    "size_bytes": 182531
+  }
 }
